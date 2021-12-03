@@ -1,6 +1,7 @@
 # Fortune Entertainment City
 
 ### 作者:[nicharleys](https://github.com/nicharleys) 建置
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/nicharleys/FortuneEntertainmentCity" alt="Hits" data-canonical-src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/nicharleys/FortuneEntertainmentCity" style="max-width:100%;"></a>
 
 
 <br><br><br>
