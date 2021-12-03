@@ -66,7 +66,7 @@
 </table>
 </div> 
 
-[NodeJS安裝](#head7) 、 [NodeJS插件安裝](#head8)
+[NodeJS安裝](#head1) 、 [NodeJS插件安裝](#head2)
 
 <div>    
 <table border="1">
@@ -81,7 +81,7 @@
 </table>
 </div> 
 
-[Unity3D設定](#head9)
+[Unity3D設定](#head3)
 
 <br>
 <br>
@@ -126,7 +126,7 @@
         <td>
             <div>
             <b> 1.</b><br>
-            <b>在NodeJS範例檔案中找到以下檔案：</b><br>
+            <b>在NodeJsServer檔案中找到以下檔案：</b><br>
             <b>package-lock.json。</b>
            </div>
         </td>
@@ -157,27 +157,6 @@
         <td>
             <div>
             <b> 4.</b><br>
-            <b>在NodeJS範例檔案內的Dapp資料夾中找到以下檔案：</b><br>
-            <b>package.json、package-lock.json。</b>
-           </div>
-        </td>
-    </tr>
-</table>
-<table border="1">
-    <tr>
-        <td>
-            <div>
-            <b> 5.</b><br>
-            <b>cmd到放置檔案的資料位置。</b>
-           </div>
-        </td>
-    </tr>
-</table>
-<table border="1">
-    <tr>
-        <td>
-            <div>
-            <b> 6.</b><br>
             <b>輸入npm install 。</b>
            </div>
         </td>
@@ -187,7 +166,7 @@
     <tr>
         <td>
             <div>
-            <b> 7.</b><br>
+            <b> 5.</b><br>
             <b>輸入node Server.js啟動簡易測試程式。</b>
            </div>
         </td>
@@ -198,7 +177,7 @@
     <tr>
         <td>
             <div>
-            <b> 8.</b><br>
+            <b> 6.</b><br>
             <b>設置Unity3D設定</b>
            </div>
         </td>
