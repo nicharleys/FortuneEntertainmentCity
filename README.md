@@ -230,6 +230,7 @@
 <div> 
 <strong font-size:13px;>
 本系統使用NodeJS作為模擬伺服器資料回傳，因此需要安裝NodeJS並啟動Server.js才能正常使用系統。
+<br/>
 若不想使用模擬伺服器，可自行對照模擬伺服器內的app.post名稱，並在該方法回傳資料庫內容，而Unity3D的資料接收在DataScripts資料夾內的DataCenter類，您需要修改_postAddress欄位內容，並將該內容設置成Server網址，網址後段內容可在DataCenter內設置的UserInfoMemento進行修改。
 </strong>
 </div> 
