@@ -157,16 +157,6 @@
         <td>
             <div>
             <b> 4.</b><br>
-            <b>輸入npm install 。</b>
-           </div>
-        </td>
-    </tr>
-</table>
-<table border="1">
-    <tr>
-        <td>
-            <div>
-            <b> 5.</b><br>
             <b>輸入node Server.js啟動簡易測試程式。</b>
            </div>
         </td>
@@ -177,7 +167,7 @@
     <tr>
         <td>
             <div>
-            <b> 6.</b><br>
+            <b> 5.</b><br>
             <b>設置Unity3D設定</b>
            </div>
         </td>
