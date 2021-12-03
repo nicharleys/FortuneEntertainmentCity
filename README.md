@@ -285,9 +285,9 @@ DataCenter的資料內容通過新增類別存放，在於管理時較為方便�
 <br/>
 <div align="center">
 <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/2.jpg"  width="400" height="228" /> <br>
-<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/3.jpg"  width="400" height="228" /> <br>
-<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/4.jpg"  width="400" height="228" /> 
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/5.jpg"  width="400" height="228" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/3.png"  width="400" height="228" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/4.png"  width="400" height="228" /> 
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/5.png"  width="400" height="228" /> <br>
 </div>
 </strong>
 
