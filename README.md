@@ -6,10 +6,10 @@
 <br><br><br>
 
 <div align="center">
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/1.gif"  width="400" height="228" "  />
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/2.gif"  width="400" height="228" " /> <br>    
-    <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/3.gif"  width="400" height="228" "  />
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/4.gif"  width="400" height="228" " /> 
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/1.gif"  width="400" height="228" "  />
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/2.gif"  width="400" height="228" " /> <br>    
+    <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/3.gif"  width="400" height="228" "  />
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/4.gif"  width="400" height="228" " /> 
 </div>
 
 <br><br><br>
@@ -252,6 +252,21 @@ https://nodejs.org/download/release/v8.12.0/
 </strong>
 </div>
 <br/>
+<span id="head1">  <h2> 詳細說明 </h2> </span>
+<div> 
+<strong font-size:13px;>
+首先介紹基礎系統的設置，系統在場景的切換設定為場景狀態，每個狀態有各自的ISceneState類管理，並透過SceneStateContext連結關係，每個場景狀態只執行各自的任務，因此不同的場景所執行的程式不會互相關聯，確保每項任務明確執行，
+<br/>
+<br/>
+在簡單的場景，像是過場或預先載入，可以在該狀態類直接設定要執行的內容，但在內容較多需要管理的情況下建議設置一個ISystemFunction類進行管理，而該類別建立後可以參考範例修改成單例、外觀、仲介者合一的類別，並在內容設置IUserInterface、ISystem，在設置完成後，可以將ISystemFunction類的方法置入ISceneState類內，由此統一管理與執行。
+<br/>
+<br/>
+每個場景的切換在SceneStateContext內會自動調用Addressable的場景載入，但釋放前一個場景需要在ISceneState的StateEnd內設定。
+<br/>
+<br/>
+
+</strong>
+</div> 
 
 <br>
 <br>
