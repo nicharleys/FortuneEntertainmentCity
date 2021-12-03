@@ -225,23 +225,18 @@
 
 # IV、文件說明
 
-<span id="head1">  <h2> 智能合約設計 </h2> </span>
+<span id="head1">  <h2> 資料傳輸 </h2> </span>
 
 <div> 
 <strong font-size:13px;>
-本系統使用Go Ethereum的Geth作為私有鏈伺服器，以此做為資料存取的儲存空間，因此在執行系統前需要建置私有鏈環境，建置內容包含選擇工作證明類型、產出區塊時間、Chain ID設定，過程需要使用puppeth來建立創世區塊，藉此才能提供Geth來啟動私有鏈。
+本系統使用NodeJS作為模擬伺服器資料回傳，因此需要安裝NodeJS並啟動Server.js才能正常使用系統。
+若不想使用模擬伺服器，可自行對照模擬伺服器內的app.post名稱，並在該方法回傳資料庫內容，而Unity3D的資料接收在DataScripts資料夾內的DataCenter類，您需要修改_postAddress欄位內容，並將該內容設置成Server網址，網址後段內容可在DataCenter內設置的UserInfoMemento進行修改。
 </strong>
 </div> 
 <br/>
 <div> 
 <strong font-size:13px;>
-若不想設定Puppeth，可以在範例的Geth資料夾內找到創世區塊配置genesis.json。
-</strong>
-</div>
-<br/>
-<div> 
-<strong font-size:13px;>
-Go Ethereum安裝版本為1.8.16，NodeJS安裝版本為8.12.0，安裝作業系統為Windows 10，若建置過程失敗或介面問題可以參考此版本。
+NodeJS安裝版本為8.12.0，安裝作業系統為Windows 10，若建置過程失敗或介面問題可以參考此版本。
 </strong>
 </div>
 <br/>
