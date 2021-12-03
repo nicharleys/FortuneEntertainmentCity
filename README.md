@@ -6,10 +6,10 @@
 <br><br><br>
 
 <div align="center">
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/1.gif"  width="400" height="228" "  />
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/2.gif"  width="400" height="228" " /> <br>    
-    <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/3.gif"  width="400" height="228" "  />
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/4.gif"  width="400" height="228" " /> 
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/1.gif"  width="400" height="228"/>
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/2.gif"  width="400" height="228"/> <br>
+    <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/3.gif"  width="400" height="228"  />
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Gif/4.gif"  width="400" height="228" />
 </div>
 
 <br><br><br>
@@ -264,9 +264,12 @@ https://nodejs.org/download/release/v8.12.0/
 每個場景的切換在SceneStateContext內會自動調用Addressable的場景載入，但釋放前一個場景需要在ISceneState的StateEnd內設定。
 <br/>
 <br/>
+<div align="center">
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/1.jpg"  width="400" height="228" /> <br>
+</div>
 
 </strong>
-</div> 
+</div>
 
 <br>
 <br>
