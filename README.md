@@ -265,9 +265,13 @@ https://nodejs.org/download/release/v8.12.0/
 每個場景的切換在SceneStateContext內會自動調用Addressable的場景載入，但釋放前一個場景需要在ISceneState的StateEnd內設定。
 <br/>
 <br/>
+
 <div align="center">
    <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/1.jpg"  width="800" height="456" /> <br>
 </div>
+
+<br/>
+<br/>
 
 </strong>
 <strong font-size:13px;>
@@ -291,6 +295,8 @@ DataCenter的資料內容通過新增類別存放，在於管理時較為方便�
 </div>
 </strong>
 
+<br/>
+<br/>
 
 </div>
 
