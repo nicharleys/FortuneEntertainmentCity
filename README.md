@@ -246,7 +246,7 @@ Go Ethereum安裝版本為1.8.16，NodeJS安裝版本為8.12.0，安裝作業系
 </div>
 <br/>
 
-<div id = 'download4'> 
+<div id = 'download1'> 
 <strong font-size:13px;>
 NodeJS的下載網址：
 
