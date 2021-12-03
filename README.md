@@ -306,11 +306,11 @@ DataCenter的資料內容通過新增類別存放，在於管理時較為方便�
 <br/>
 <br/>
 <div align="center">
-<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/6.jpg"  width="400" height="228" />
-<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/7.jpg"  width="400" height="228" /> <br>
-<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/8.jpg"  width="400" height="228" />
-   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/9.jpg"  width="400" height="228" /> <br>
-      <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/10.jpg"  width="400" height="228" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/6.jpg"  width="400" height="128" />
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/7.jpg"  width="400" height="128" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/8.jpg"  width="400" height="180" />
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/9.jpg"  width="400" height="180" /> <br>
+      <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/10.jpg"  width="800" height="250" /> <br>
 </div>
 </strong>
 
