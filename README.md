@@ -265,14 +265,11 @@ https://nodejs.org/download/release/v8.12.0/
 每個場景的切換在SceneStateContext內會自動調用Addressable的場景載入，但釋放前一個場景需要在ISceneState的StateEnd內設定。
 <br/>
 <br/>
-
 <div align="center">
    <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/1.jpg"  width="800" height="456" /> <br>
 </div>
-
 <br/>
 <br/>
-
 </strong>
 <strong font-size:13px;>
 再來是資料處理的部分，系統透過IUserInterface設定畫面，並由ISystem處理UI事件，同時透過ISystem傳接資料至DataCenter內對應的資料內容。
@@ -294,10 +291,8 @@ DataCenter的資料內容通過新增類別存放，在於管理時較為方便�
    <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/5.jpg"  width="400" height="228" /> <br>
 </div>
 </strong>
-
 <br/>
 <br/>
-
 <strong font-size:13px;>
 本地的資料儲存用於自動登入帳號，登入方式分為帳號登入跟遊客登入，並在使用者初次登入時儲存登入類型與帳號、密碼，而在大廳的設定面板可以點選帳號設定，並選擇切換帳號或登出帳號，切換帳號是將本地儲存的登入類型檔案刪掉，而登出帳號則是刪除本地儲存的帳號、密碼，因此對於本地登入的用戶在登出帳號時應給予警示。
 <br/>
@@ -313,8 +308,6 @@ DataCenter的資料內容通過新增類別存放，在於管理時較為方便�
       <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/10.jpg"  width="800" height="250" /> <br>
 </div>
 </strong>
-
 </div>
-
 <br>
 <br>
