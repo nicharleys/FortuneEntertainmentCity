@@ -1,5 +1,5 @@
 # Fortune Entertainment City
- 
+
 ### 作者:[nicharleys](https://github.com/nicharleys) 建置
 
 
@@ -17,8 +17,8 @@
 
 <div>
    <h3 styles={font-weight:bold;}>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        這是一個使用單例、外觀、仲介者、狀態模式所製作的基礎系統，並以簡易的NodeJS程式測試資料的傳接過程。其中使用到Unity的Addressable來達到熱更新效果，同時在UGUI的部分設計靜態與動態Canvas分離，以此減少UGUI的Rebuild過程與性能消耗，並使用Atlas圖集減少DrawCall產生，讓UI介面能以高效的方式呈現給使用者。資料的部分提供UI類、System類與資料中心達到MVP模式的效果，並在網路操作前有網路狀態測試。基礎系統的部分只處理登入與載入，內容依照需求可再加入其他遊戲，藉此方式設計成遊戲大廳並提供其他遊戲的載入與啟動。
-</<h3> 
-</div> 
+</<h3>
+</div>
 
 
 <br>
@@ -49,11 +49,11 @@
 <br>
 <br>
  </div>
- 
- 
+
+
 # II、啟動流程
 
-<div>    
+<div>
 <table border="1">
     <tr>
         <td>
@@ -64,11 +64,11 @@
         </td>
     </tr>
 </table>
-</div> 
+</div>
 
 [NodeJS安裝](#head1) 、 [NodeJS插件安裝](#head2)
 
-<div>    
+<div>
 <table border="1">
     <tr>
         <td>
@@ -79,7 +79,7 @@
         </td>
     </tr>
 </table>
-</div> 
+</div>
 
 [Unity3D設定](#head3)
 
@@ -89,7 +89,7 @@
 # III、環境建置
 
 <div  id = 'head1'>
-   <h3 styles={font-weight:bold;}>(1) NodeJS安裝</<h3> 
+   <h3 styles={font-weight:bold;}>(1) NodeJS安裝</h3>
 </div>
 <table border="1">
     <tr>
@@ -119,7 +119,7 @@
 <br>
 
 <div id = 'head2'>
-   <h3 styles={font-weight:bold;}>(2) NodeJS插件安裝</<h3> 
+   <h3 styles={font-weight:bold;}>(2) NodeJS插件安裝</h3>
 </div>
 <table border="1">
     <tr>
@@ -175,10 +175,10 @@
 </table>
 
 <br>
-<br>                             
+<br>
 
 <div  id = 'head3'>
-   <h3 styles={font-weight:bold;}>(9) Unity3D設定</<h3> 
+   <h3 styles={font-weight:bold;}>(9) Unity3D設定</h3>
 </div>
 <table border="1">
     <tr>
@@ -221,22 +221,22 @@
     </tr>
 </table>
 <br>
-<br>    
+<br>
 
 # IV、文件說明
 
 <span id="head1">  <h2> 資料傳輸 </h2> </span>
 
-<div> 
+<div>
 <strong font-size:13px;>
 本系統使用NodeJS作為模擬伺服器資料回傳，因此需要安裝NodeJS並啟動Server.js才能正常使用系統。
 <br/>
 <br/>
 若不想使用模擬伺服器，可自行對照模擬伺服器內的app.post名稱，並在該方法回傳資料庫內容，而Unity3D的資料接收在DataScripts資料夾內的DataCenter類，您需要修改_postAddress欄位內容，並將該內容設置成Server網址，網址後段內容可在DataCenter內設置的UserInfoMemento進行修改。
 </strong>
-</div> 
+</div>
 <br/>
-<div> 
+<div>
 <strong font-size:13px;>
 NodeJS安裝版本為8.12.0，安裝作業系統為Windows 10，若建置過程失敗或介面問題可以參考此版本。
 </strong>
@@ -252,10 +252,11 @@ https://nodejs.org/download/release/v8.12.0/
 </strong>
 </div>
 <br/>
+
 <span id="head1">  <h2> 詳細說明 </h2> </span>
-<div> 
+<div>
 <strong font-size:13px;>
-首先介紹基礎系統的設置，系統在場景的切換設定為場景狀態，每個狀態有各自的ISceneState類管理，並透過SceneStateContext連結關係，每個場景狀態只執行各自的任務，因此不同的場景所執行的程式不會互相關聯，確保每項任務明確執行，
+首先說明基礎系統的設置，系統在場景的切換設定為場景狀態，每個狀態有各自的ISceneState類管理，並透過SceneStateContext連結關係，每個場景狀態只執行各自的任務，因此不同的場景所執行的程式不會互相關聯，確保每項任務明確執行。
 <br/>
 <br/>
 在簡單的場景，像是過場或預先載入，可以在該狀態類直接設定要執行的內容，但在內容較多需要管理的情況下建議設置一個ISystemFunction類進行管理，而該類別建立後可以參考範例修改成單例、外觀、仲介者合一的類別，並在內容設置IUserInterface、ISystem，在設置完成後，可以將ISystemFunction類的方法置入ISceneState類內，由此統一管理與執行。
@@ -269,6 +270,28 @@ https://nodejs.org/download/release/v8.12.0/
 </div>
 
 </strong>
+<strong font-size:13px;>
+再來是資料處理的部分，系統透過IUserInterface設定畫面，並由ISystem處理UI事件，同時透過ISystem傳接資料至DataCenter內對應的資料內容。
+<br/>
+<br/>
+資料的內容分為遠端跟本地兩種，傳輸的方式是由DataRequest類取得或儲存，本地的資料是用Application.persistentDataPath的方式存成Json檔，因此通常有固定的儲存位置，遠端則直接依照網址執行UnityWebRequest，並用Post的方式請求資料，網址位置需要在DataCenter類與Memento類設定。
+<br/>
+<br/>
+DataCenter的資料內容通過新增類別存放，在於管理時較為方便，並且內容存取只能透過該類別方法，資料的公開屬性則是回傳私有欄位，確保資料不被更改。
+<br/>
+<br/>
+附帶一提的是網路狀態測試的方法設置於DataCenter內，當有遠端載入AB包或是遠端請求資料的操作應當調用NetworkTest方法，並在該類加入網路異常事件至NetworkFailedHandler。
+<br/>
+<br/>
+<div align="center">
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/2.jpg"  width="400" height="228" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/3.jpg"  width="400" height="228" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/4.jpg"  width="400" height="228" /> 
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/5.jpg"  width="400" height="228" /> <br>
+</div>
+</strong>
+
+
 </div>
 
 <br>
