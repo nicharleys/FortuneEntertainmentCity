@@ -298,6 +298,22 @@ DataCenter的資料內容通過新增類別存放，在於管理時較為方便�
 <br/>
 <br/>
 
+<strong font-size:13px;>
+本地的資料儲存用於自動登入帳號，登入方式分為帳號登入跟遊客登入，並在使用者初次登入時儲存登入類型與帳號、密碼，而在大廳的設定面板可以點選帳號設定，並選擇切換帳號或登出帳號，切換帳號是將本地儲存的登入類型檔案刪掉，而登出帳號則是刪除本地儲存的帳號、密碼，因此對於本地登入的用戶在登出帳號時應給予警示。
+<br/>
+<br/>
+在使用者透過遠端載入其他遊戲的AB包時，系統也會儲存載入的遊戲名稱，以此判斷使用者是否為初次載入，並判斷遊戲的載入選項是更新或下載，同時也用於再次進入系統時判斷能否卸載遊戲。
+<br/>
+<br/>
+<div align="center">
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/6.jpg"  width="400" height="228" />
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/7.jpg"  width="400" height="228" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/8.jpg"  width="400" height="228" />
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/9.jpg"  width="400" height="228" /> <br>
+      <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/10.jpg"  width="400" height="228" /> <br>
+</div>
+</strong>
+
 </div>
 
 <br>
