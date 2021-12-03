@@ -308,6 +308,23 @@ DataCenter的資料內容通過新增類別存放，在於管理時較為方便�
       <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/10.jpg"  width="800" height="250" /> <br>
 </div>
 </strong>
+<br/>
+<br/>
+<strong font-size:13px;>
+資源包的方面，系統使用Addressable的方式載入，資源包已放置Amazon的雲端物件儲存，因此不必再次建立資源包。
+<br/>
+<br/>
+而資源包的內容也包含Atlas圖集，系統利用圖集設置UI圖示來減少DrawCall的產生，並在Mask的部分使用Rect Mask 2D再次減少DrawCall，同時UI的設置為靜態與動態Canvas分離，系統在動態Canvas變動時造成的Rebuild延遲可以有效降低，而UI的關閉方式則是關閉Canvas元件，藉此系統可以不必使用Enable/Disable的方式關閉UI進而造成Canvas的Rebuild，同時也不必使用移動UI至畫面外的方式造成Drawcall上升。
+<br/>
+<br/>
+<div align="center">
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/11.jpg"  width="400" height="228" />
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/12.jpg"  width="400" height="228" /> <br>
+<img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/8.jpg"  width="400" height="228" />
+   <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/9.jpg"  width="400" height="228" /> <br>
+      <img src="https://github.com/nicharleys/FortuneEntertainmentCity/blob/master/Pictures/Pic/10.jpg"  width="400" height="456" /> <br>
+</div>
+</strong>
 </div>
 <br>
 <br>
