@@ -13,7 +13,16 @@ public class Test : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            SceneSwitchController.Instance.SwitchScene("ExampleScene").GetAwaiter();
+            //SceneSwitchController.Instance.SwitchScene("ExampleScene").GetAwaiter();
+            SceneSwitchController.Instance.AddScene("ExampleScene").GetAwaiter();
+        }
+        if(Input.GetKeyDown(KeyCode.A)) {
+            //SceneSwitchController.Instance.SwitchScene("ExampleScene").GetAwaiter();
+            SceneSwitchController.Instance.UnloadScene("ExampleScene").GetAwaiter();
+        }
+        if(Input.GetKeyDown(KeyCode.B)) {
+            //SceneSwitchController.Instance.SwitchScene("ExampleScene").GetAwaiter();
+            SceneSwitchController.Instance.UnloadAllScene().GetAwaiter();
         }
     }
 }

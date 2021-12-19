@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
@@ -25,6 +26,9 @@ public class SceneSwitchController {
             await Task.Yield();
     }
     public async Task AddScene(string theSceneName) {
+        AsyncOperationHandle<SceneInstance> addSceneHandle;
+        if(_addSceneHandles.TryGetValue(theSceneName, out addSceneHandle))
+            return;
         Task networkTestTask = DataCenter.Instance.NetworkTest();
         while(!networkTestTask.IsCompleted)
             await Task.Yield();
@@ -33,8 +37,27 @@ public class SceneSwitchController {
             await Task.Yield();
     }
     public async Task UnloadScene(string theSceneName) {
-        AsyncOperationHandle<SceneInstance> unloadHandle = Addressables.UnloadSceneAsync(_addSceneHandles[theSceneName], true);
+        AsyncOperationHandle<SceneInstance> addSceneHandle;
+        if(!_addSceneHandles.TryGetValue(theSceneName, out addSceneHandle))
+            return;
+        Task networkTestTask = DataCenter.Instance.NetworkTest();
+        while(!networkTestTask.IsCompleted)
+            await Task.Yield();
+        AsyncOperationHandle<SceneInstance> unloadHandle = Addressables.UnloadSceneAsync(addSceneHandle, true);
         while(!unloadHandle.IsDone)
             await Task.Yield();
+        _addSceneHandles.Remove(theSceneName);
+    }
+    public async Task UnloadAllScene() {
+        Task networkTestTask = DataCenter.Instance.NetworkTest();
+        while(!networkTestTask.IsCompleted)
+            await Task.Yield();
+
+        foreach(KeyValuePair<string, AsyncOperationHandle<SceneInstance>> addSceneHandle in _addSceneHandles) {
+            AsyncOperationHandle<SceneInstance> unloadHandle = Addressables.UnloadSceneAsync(addSceneHandle.Value, true);
+            while(!unloadHandle.IsDone)
+                await Task.Yield();
+        }
+        _addSceneHandles.Clear();
     }
 }
