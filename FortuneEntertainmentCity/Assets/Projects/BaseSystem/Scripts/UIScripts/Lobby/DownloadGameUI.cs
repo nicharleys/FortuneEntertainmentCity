@@ -1,7 +1,6 @@
 ﻿using UnityEngine.UI;
 
 public class DownloadGameUI : IUserInterface {
-    private LobbyFunction _lobbyFunction = null;
     public Button BackButton { get; private set; }
     public Button LoadButton { get; private set; }
     public Button UnloadButton { get; private set; }
@@ -13,9 +12,6 @@ public class DownloadGameUI : IUserInterface {
     public DownloadGameUI(ISystemFunction theFunction) : base(theFunction) {
         Initialize();
         HideUI();
-    }
-    protected override void SetSystemFunction(ISystemFunction theFunction) {
-        _lobbyFunction = theFunction as LobbyFunction;
     }
     public override void Initialize() {
         DynamicRootUI = UITool.FindUIGameObject(CanvasType.Dynamic, "DownloadGameUI");

@@ -1,10 +1,8 @@
 ﻿public class SlotMachineGameSystem : ISystem {
     private SlotMachineFunction _slotMachineFunction = null;
-    public SlotMachineGameSystem(ISystemFunction theFunction) : base(theFunction) {
+    public SlotMachineGameSystem(SlotMachineFunction theFunction) : base(theFunction) {
+        _slotMachineFunction = theFunction;
         Initialize();
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _slotMachineFunction = theFunction as SlotMachineFunction;
     }
     public override void Initialize() {
         _slotMachineFunction.SlotMachineGameUI.BackLobbyButton.onClick.AddListener(() => OnBackLobbyClick());

@@ -1,10 +1,8 @@
 ﻿public class ExampleSystem : ISystem {
     private ExampleFunction _exampleFunction = null;
-    public ExampleSystem(ISystemFunction theFunction) : base(theFunction) {
+    public ExampleSystem(ExampleFunction theFunction) : base(theFunction) {
+        _exampleFunction = theFunction;
         Initialize();
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _exampleFunction = theFunction as ExampleFunction;
     }
     public override void Initialize() {
         _exampleFunction.ExampleUI.BackLobbyButton.onClick.AddListener(() => OnBackLobbyClick());

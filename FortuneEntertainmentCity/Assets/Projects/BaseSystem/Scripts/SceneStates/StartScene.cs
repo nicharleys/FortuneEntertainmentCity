@@ -68,7 +68,7 @@ public class StartScene : MonoBehaviour {
         _isDownloadBase = false;
 
         await Task.Delay(1000);
-        SceneSwitchController.Instance.SwitchScene("LoginScene").GetAwaiter();
+        SceneSwitchController.SwitchScene("LoginScene").GetAwaiter();
     }
     private void PreloadScenes() {
         if(_isDownloadBase)

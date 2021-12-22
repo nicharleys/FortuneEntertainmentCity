@@ -2,10 +2,8 @@
 
 public class SelectLoginSystem : ISystem {
     private LoginFunction _loginFunction = null;
-    public SelectLoginSystem(ISystemFunction theFunction) : base(theFunction) {
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _loginFunction = theFunction as LoginFunction;
+    public SelectLoginSystem(LoginFunction theFunction) : base(theFunction) {
+        _loginFunction = theFunction;
         DataCenter.Instance.NetworkFailedHandler += OnNetworkFailed;
     }
     public void AutoLogin() {

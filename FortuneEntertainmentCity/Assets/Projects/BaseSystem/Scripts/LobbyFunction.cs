@@ -1,7 +1,4 @@
 ﻿public class LobbyFunction : ISystemFunction {
-    #region State
-    public SceneStateContext StateContext { get; private set; }
-    #endregion
     #region UI
     public LobbyUI LobbyUI { get; private set; }
     public PanelUI PanelUI { get; private set; }
@@ -25,9 +22,6 @@
     public LobbyFunction() {
     }
     #endregion
-    public override void SetStateContext(SceneStateContext stateContext) {
-        StateContext = stateContext;
-    }
     #region Commonly
     public override void Initialize() {
         #region UI
@@ -65,15 +59,18 @@
     }
     #endregion
     public void SetStateLogin() {
-        StateContext.SetState(new LoginState(StateContext), "LoginScene").GetAwaiter();
+        SceneSwitchController.SwitchScene("LoginScene").GetAwaiter();
     }
     public void SetStateSlotMachine() {
-        StateContext.SetState(new SlotMachineState(StateContext), "SlotMachineScene").GetAwaiter();
+        SceneSwitchController.SwitchScene("SlotMachineScene").GetAwaiter();
     }
     public void SetStateExample() {
-        StateContext.SetState(new ExampleState(StateContext), "ExampleScene").GetAwaiter();
+        SceneSwitchController.SwitchScene("ExampleScene").GetAwaiter();
     }
     public void SettingButtonClose() {
         _panelSystem.OnSettingButtonClose();
+    }
+    public void ClearInstance() {
+        _instance = null;
     }
 }

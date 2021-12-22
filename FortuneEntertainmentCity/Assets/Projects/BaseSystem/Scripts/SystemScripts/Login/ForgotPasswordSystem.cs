@@ -2,12 +2,10 @@
 
 public class ForgotPasswordSystem : ISystem {
     private LoginFunction _loginFunction = null;
-    public ForgotPasswordSystem(ISystemFunction theFunction) : base(theFunction) {
-        Initialize();
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _loginFunction = theFunction as LoginFunction;
+    public ForgotPasswordSystem(LoginFunction theFunction) : base(theFunction) {
+        _loginFunction = theFunction;
         DataCenter.Instance.NetworkFailedHandler += OnNetworkFailed;
+        Initialize();
     }
     public override void Initialize() {
         _loginFunction.ForgotPasswordUI.SendButton.onClick.AddListener(() => OnSendPasswordClick());

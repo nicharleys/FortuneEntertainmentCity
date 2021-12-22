@@ -62,23 +62,23 @@ public class UserInfoMemento {
     }
 }
 [SerializeField]
-public struct UserInfo {
+public class UserInfo {
     public string Account;
     public string Password;
 }
 [SerializeField]
-public struct CreateAccountInfo {
+public class CreateAccountInfo {
     public string Email;
     public string Account;
     public string Password;
     public string Verification;
 }
 [SerializeField]
-public struct EmailInfo {
+public class EmailInfo {
     public string Email;
     public string Account;
 }
 [SerializeField]
-public struct LoginType {
+public class LoginType {
     public string Type;
 }

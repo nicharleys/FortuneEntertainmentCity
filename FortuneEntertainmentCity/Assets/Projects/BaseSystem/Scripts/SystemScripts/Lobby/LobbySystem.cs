@@ -19,12 +19,10 @@ public class LobbySystem : ISystem {
 
     private AsyncOperationHandle<SpriteAtlas> _loadSpriteAtlasHandle;
     private delegate void GameStateSwitch();
-    public LobbySystem(ISystemFunction theFunction) : base(theFunction) {
-        Initialize();
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _lobbyFunction = theFunction as LobbyFunction;
+    public LobbySystem(LobbyFunction theFunction) : base(theFunction) {
+        _lobbyFunction = theFunction;
         DataCenter.Instance.NetworkFailedHandler += OnNetworkFailed;
+        Initialize();
     }
     public override void Initialize() {
         if(!DataRequest.CheckFile("GameLoadInfo")) {

@@ -4,12 +4,10 @@ public class CreateAccountSystem : ISystem {
     private LoginFunction _loginFunction = null;
     private bool _isRunLogin = false;
     private bool _isSendVerification = false;
-    public CreateAccountSystem(ISystemFunction theFunction) : base(theFunction) {
-        Initialize();
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _loginFunction = theFunction as LoginFunction;
+    public CreateAccountSystem(LoginFunction theFunction) : base(theFunction) {
+        _loginFunction = theFunction;
         DataCenter.Instance.NetworkFailedHandler += OnNetworkFailed;
+        Initialize();
     }
     public override void Initialize() {
         _loginFunction.CreateAccountUI.SendVerificationButton.onClick.AddListener(() => OnSendVerificationClick());
@@ -39,11 +37,10 @@ public class CreateAccountSystem : ISystem {
         if(sendVerificationTask.Result == "0")
             ShowLoginFailed(true, "* 信箱錯誤 *");
 
-        TimeCount timeCount = new TimeCount();
-        timeCount.Timer(60);
+        TimeCount.Timer(60);
         _loginFunction.CreateAccountUI.VerificationMessageText.gameObject.SetActive(true);
-        while(!timeCount.IsTimeUp) {
-            _loginFunction.CreateAccountUI.SendVerificationText.text = timeCount.Seconds.ToString() + "秒";
+        while(!TimeCount.IsTimeUp) {
+            _loginFunction.CreateAccountUI.SendVerificationText.text = TimeCount.Seconds.ToString() + "秒";
             await Task.Yield();
         }
         _loginFunction.CreateAccountUI.SendVerificationText.text = "發送驗證";

@@ -1,10 +1,7 @@
-﻿public abstract class ISystem {
-    public ISystem(ISystemFunction theFunction) {
-        SetSystemFunction(theFunction);
-    }
-    public abstract void SetSystemFunction(ISystemFunction theFunction);
-    public virtual void Initialize() { }
-    public virtual void Release() { }
-    public virtual void Update() { }
+﻿public abstract class ISystem : ISystemObject {
+    public ISystem(ISystemFunction theFunction) : base(theFunction) { }
+    public override void Initialize() { }
+    public override void Release() { }
+    public override void Update() { }
     public virtual void FixedUpdate() { }
 }

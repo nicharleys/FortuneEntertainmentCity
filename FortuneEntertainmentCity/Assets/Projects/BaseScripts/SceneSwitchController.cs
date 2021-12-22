@@ -1,23 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitchController {
-    private Dictionary<string, AsyncOperationHandle<SceneInstance>> _addSceneHandles = new Dictionary<string, AsyncOperationHandle<SceneInstance>>();
-    private static SceneSwitchController _instance;
-    public static SceneSwitchController Instance {
-        get {
-            if(_instance == null)
-                _instance = new SceneSwitchController();
-            return _instance;
-        }
-    }
-    public SceneSwitchController() { }
-    public async Task SwitchScene(string theSceneName) {
+public static class SceneSwitchController {
+    private static Dictionary<string, AsyncOperationHandle<SceneInstance>> _addSceneHandles = new Dictionary<string, AsyncOperationHandle<SceneInstance>>();
+    public static async Task SwitchScene(string theSceneName) {
         Task networkTestTask = DataCenter.Instance.NetworkTest();
         while(!networkTestTask.IsCompleted)
             await Task.Yield();
@@ -25,7 +15,7 @@ public class SceneSwitchController {
         while(!loadSceneHandle.IsDone)
             await Task.Yield();
     }
-    public async Task AddScene(string theSceneName) {
+    public static async Task AddScene(string theSceneName) {
         AsyncOperationHandle<SceneInstance> addSceneHandle;
         if(_addSceneHandles.TryGetValue(theSceneName, out addSceneHandle))
             return;
@@ -36,7 +26,7 @@ public class SceneSwitchController {
         while(!_addSceneHandles[theSceneName].IsDone)
             await Task.Yield();
     }
-    public async Task UnloadScene(string theSceneName) {
+    public static async Task UnloadScene(string theSceneName) {
         AsyncOperationHandle<SceneInstance> addSceneHandle;
         if(!_addSceneHandles.TryGetValue(theSceneName, out addSceneHandle))
             return;
@@ -48,7 +38,7 @@ public class SceneSwitchController {
             await Task.Yield();
         _addSceneHandles.Remove(theSceneName);
     }
-    public async Task UnloadAllScene() {
+    public static async Task UnloadAllScene() {
         Task networkTestTask = DataCenter.Instance.NetworkTest();
         while(!networkTestTask.IsCompleted)
             await Task.Yield();

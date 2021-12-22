@@ -52,7 +52,6 @@ public static class DataRequest {
         UnityWebRequestAsyncOperation operation = request.SendWebRequest();
         while(!operation.isDone)
             await Task.Yield();
-        //Debug.Log("Status Code: " + request.responseCode);
         if(request.isNetworkError || request.isHttpError)
             return request.error;
         else

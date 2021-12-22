@@ -1,6 +1,5 @@
 ﻿using UnityEngine.UI;
 public class CreateAccountUI : IUserInterface {
-    private LoginFunction _loginFunction = null;
     public InputField EmailInputField { get; private set; }
     public InputField AccountInputField { get; private set; }
     public InputField PasswordInputField { get; private set; }
@@ -15,9 +14,6 @@ public class CreateAccountUI : IUserInterface {
     public CreateAccountUI(ISystemFunction theFunction) : base(theFunction) {
         Initialize();
         HideUI();
-    }
-    protected override void SetSystemFunction(ISystemFunction theFunction) {
-        _loginFunction = theFunction as LoginFunction;
     }
     public override void Initialize() {
         DynamicRootUI = UITool.FindUIGameObject(CanvasType.Dynamic, "CreateAccountUI");

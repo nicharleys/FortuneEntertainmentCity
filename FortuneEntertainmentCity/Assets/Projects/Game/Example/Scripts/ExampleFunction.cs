@@ -1,7 +1,4 @@
 ﻿public class ExampleFunction : ISystemFunction {
-    #region State
-    public SceneStateContext StateContext { get; private set; }
-    #endregion
     #region UI
     public ExampleUI ExampleUI { get; private set; }
     #endregion
@@ -20,9 +17,6 @@
     public ExampleFunction() {
     }
     #endregion
-    public override void SetStateContext(SceneStateContext stateContext) {
-        StateContext = stateContext;
-    }
     #region Commonly
     public override void Initialize() {
         #region UI
@@ -54,6 +48,9 @@
     }
     #endregion
     public void SetStateLobby() {
-        StateContext.SetState(new LobbyState(StateContext), "LobbyScene").GetAwaiter();
+        SceneSwitchController.SwitchScene("LobbyScene").GetAwaiter();
+    }
+    public void ClearInstance() {
+        _instance = null;
     }
 }

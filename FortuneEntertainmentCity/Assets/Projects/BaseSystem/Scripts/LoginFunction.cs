@@ -1,7 +1,6 @@
-﻿public class LoginFunction : ISystemFunction {
-    #region State
-    public SceneStateContext StateContext { get; private set; }
-    #endregion
+﻿using UnityEngine;
+
+public class LoginFunction : ISystemFunction {
     #region UI
     public SelectLoginUI SelectLoginUI { get; private set; }
     public LoginAccountUI LoginAccountUI { get; private set; }
@@ -26,9 +25,6 @@
     public LoginFunction() {
     }
     #endregion
-    public override void SetStateContext(SceneStateContext stateContext) {
-        StateContext = stateContext;
-    }
     #region Commonly
     public override void Initialize() {
         #region UI
@@ -75,6 +71,9 @@
         _selectLoginSystem.AutoLogin();
     }
     public void SetStateLobby() {
-        StateContext.SetState(new LobbyState(StateContext), "LobbyScene").GetAwaiter();
+        SceneSwitchController.SwitchScene("LobbyScene").GetAwaiter();
+    }
+    public void ClearInstance() {
+        _instance = null;
     }
 }

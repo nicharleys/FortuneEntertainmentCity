@@ -1,7 +1,6 @@
 ﻿using UnityEngine.UI;
 
 public class UserInfoUI : IUserInterface {
-    private LobbyFunction _lobbyFunction = null;
     public Button ResetPasswordButton { get; private set; }
     public Button BindAccountButton { get; private set; }
     public Button SwitchAccountButton { get; private set; }
@@ -11,9 +10,6 @@ public class UserInfoUI : IUserInterface {
     public UserInfoUI(ISystemFunction theFunction) : base(theFunction) {
         Initialize();
         HideUI();
-    }
-    protected override void SetSystemFunction(ISystemFunction theFunction) {
-        _lobbyFunction = theFunction as LobbyFunction;
     }
     public override void Initialize() {
         StaticRootUI = UITool.FindUIGameObject(CanvasType.Static, "UserInfoUI");

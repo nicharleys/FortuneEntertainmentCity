@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 
 public class PanelUI : IUserInterface {
-    private LobbyFunction _lobbyFunction = null;
     #region Panel
     public GameObject SettingPanel { get; private set; }
     public GameObject SettingList { get; private set; }
@@ -15,9 +14,6 @@ public class PanelUI : IUserInterface {
 
     public PanelUI(ISystemFunction theFunction) : base(theFunction) {
         Initialize();
-    }
-    protected override void SetSystemFunction(ISystemFunction theFunction) {
-        _lobbyFunction = theFunction as LobbyFunction;
     }
     public override void Initialize() {
         DynamicRootUI = UITool.FindUIGameObject(CanvasType.Dynamic, "PanelUI");

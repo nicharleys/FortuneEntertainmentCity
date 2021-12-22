@@ -1,10 +1,8 @@
 ﻿public class UserInfoSystem : ISystem {
     private LobbyFunction _lobbyFunction = null;
-    public UserInfoSystem(ISystemFunction theFunction) : base(theFunction) {
+    public UserInfoSystem(LobbyFunction theFunction) : base(theFunction) {
+        _lobbyFunction = theFunction;
         Initialize();
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _lobbyFunction = theFunction as LobbyFunction;
     }
     public override void Initialize() {
         _lobbyFunction.UserInfoUI.ResetPasswordButton.onClick.AddListener(() => OnResetPasswordClick());

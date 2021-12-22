@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class LobbyUI : IUserInterface {
-    private LobbyFunction _lobbyFunction = null;
     public GameObject GameList { get; private set; }
     public Button ExitButton { get; private set; }
     #region GameButton
@@ -10,11 +10,8 @@ public class LobbyUI : IUserInterface {
     public Button ExampleButton { get; private set; }
     #endregion
 
-    public LobbyUI(ISystemFunction theFunction) : base(theFunction) {
+    public LobbyUI(LobbyFunction theFunction) : base(theFunction) {
         Initialize();
-    }
-    protected override void SetSystemFunction(ISystemFunction theFunction) {
-        _lobbyFunction = theFunction as LobbyFunction;
     }
     public override void Initialize() {
         DynamicRootUI = UITool.FindUIGameObject(CanvasType.Dynamic, "LobbyUI");

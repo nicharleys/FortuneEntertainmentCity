@@ -13,11 +13,9 @@ public class PanelSystem : ISystem {
     private bool _isSelfInfoClick = false;
 
     private AsyncOperationHandle<SpriteAtlas> _loadSpriteAtlasHandle;
-    public PanelSystem(ISystemFunction theFunction) : base(theFunction) {
+    public PanelSystem(LobbyFunction theFunction) : base(theFunction) {
+        _lobbyFunction = theFunction;
         Initialize();
-    }
-    public override void SetSystemFunction(ISystemFunction theFunction) {
-        _lobbyFunction = theFunction as LobbyFunction;
     }
     public override void Initialize() {
         _loadSpriteAtlasHandle = Addressables.LoadAssetAsync<SpriteAtlas>("LobbyUiSpritsAtlas");

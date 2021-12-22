@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class IUserInterface {
+public abstract class IUserInterface: ISystemObject {
     protected GameObject DynamicRootUI { 
         get { 
             return _dynamicRootUI; 
@@ -24,10 +24,8 @@ public abstract class IUserInterface {
     private Canvas _dynamicRootCanvas = null;
     private Canvas _staticRootCanvas = null;
     private bool _isAction = true;
-    public IUserInterface(ISystemFunction theFunction) {
-        SetSystemFunction(theFunction);
+    public IUserInterface(ISystemFunction theFunction) : base(theFunction) {
     }
-    protected abstract void SetSystemFunction(ISystemFunction theFunction);
     public bool GetActionState() {
         return _isAction;
     }
@@ -44,8 +42,8 @@ public abstract class IUserInterface {
             _staticRootCanvas.enabled = enable;
         _isAction = enable;
     }
-    public virtual void Initialize() { }
-    public virtual void Release() { }
-    public virtual void Update() { }
+    public override void Initialize() { }
+    public override void Release() { }
+    public override void Update() { }
 
 }
