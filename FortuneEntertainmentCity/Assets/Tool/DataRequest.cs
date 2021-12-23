@@ -3,7 +3,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-
 public static class DataRequest {
     public static async Task<string> RemotePost(string url) {
         UnityWebRequest request = new UnityWebRequest(url, "POST") {
@@ -38,6 +37,7 @@ public static class DataRequest {
     }
     public static async Task<bool> Ping(string ipAddress) {
         float pingTime = 0;
+        #if UNITY_STANDALONE_WIN
         Ping ping = new Ping(ipAddress);
         while(!ping.isDone) {
             await Task.Delay(100);
@@ -45,6 +45,16 @@ public static class DataRequest {
             if(pingTime > 3.0)
                 return false;
         }
+        #endif
+        #if UNITY_WEBGL
+        NetworkReachability network = Application.internetReachability;
+        while(network == NetworkReachability.NotReachable) {
+            await Task.Delay(100);
+            pingTime += 0.1f;
+            if(pingTime > 3.0)
+                return false;
+        }
+        #endif
         return true;
     }
     private static async Task<string> SendRequest(UnityWebRequest request) {
